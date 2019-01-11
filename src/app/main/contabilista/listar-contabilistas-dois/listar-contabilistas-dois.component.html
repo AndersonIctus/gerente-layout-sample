@@ -14,14 +14,24 @@
 
           <mat-card-content class="my-table-card-content">
               <div class="table-responsive-sm">
-                <table mat-table  #table [dataSource]="dataSource" aria-label="Elements"
-                      class="table-scrollable table-content"
-                      matSort matSortActive="nome" matSortDirection="asc" >
+                <table #table mat-table multiTemplateDataRows [dataSource]="dataSource" aria-label="Elements"
+                       class="table-scrollable table-content" matSort matSortActive="nome" matSortDirection="asc" >
+
+                  <ng-container matColumnDef="expandedDetail">
+                    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                      <div class="example-element-detail" [@detailExpand]="element === expandedElement ? 'expanded' : 'collapsed'">
+                        ({{ element.idContabilista }}) - {{ element.nome }} <br />
+                        Cidade/UF: {{ element.municipio }} / {{ element.uf }} <br />
+                        Cpf: {{ element.cpf }} <br />
+                        Cnpj: {{ element.cnpj }} <br />
+                      </div>
+                    </td>
+                  </ng-container>
 
                   <!-- ID -->
                   <ng-container matColumnDef="idContabilista" >
                     <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
-                    <td mat-cell class="element-row" *matCellDef="let row">{{ row.idContabilista }}</td>
+                    <td mat-cell *matCellDef="let row" style="width: 10%;">{{ row.idContabilista }}</td>
                   </ng-container>
 
                   <!-- SELECT COLUMN -->
@@ -85,9 +95,13 @@
                     <td tabindex="-1" class="p-0" mat-cell [routerLink]="['/home/contabilistas/'+row.idContabilista]" *matCellDef="let row"> <mat-icon color="primary" >create</mat-icon></td>
                   </ng-container>
 
-                  <!--  -->
+                  <!-- SELECT DAS LINHAS -->
                   <tr mat-header-row color="primary" *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
-                  <tr mat-row class="element-row" [ngClass]="{ 'element-row-selected': selection.isSelected(row) }" *matRowDef="let row; columns: columnsToDisplay;"> </tr>
+                  <tr mat-row class="element-row" *matRowDef="let row; columns: columnsToDisplay;"
+                      [ngClass]="{ 'element-row-selected': selection.isSelected(row) }"
+                      [class.example-expanded-row]="expandedElement === row"
+                      (click)="expandedElement = expandedElement === row ? null : row; selectRow(row);"> </tr>
+                  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
                 </table>
               </div>
 
@@ -103,7 +117,8 @@
 
     <!-- TOOL BOX -->
     <div class="tool-box text-right" *ngIf="hasSelectedValue()">
-      <span style="font-family: monospace !important;">Selecionado {{ selection.selected.length }} {{ (selection.selected.length == 1)? 'contabilista' : 'contabilistas' }} </span>
       <button class="ml-auto" mat-raised-button mat-button color="warn" (click)="openCancelDialog()">DELETAR</button>
+      <button class="ml-2" mat-raised-button mat-button [routerLink]="['/home/contabilistas/' + expandedElement.idContabilista]"
+              color="primary" >EDITAR</button>
     </div>
-  </div>
+</div>

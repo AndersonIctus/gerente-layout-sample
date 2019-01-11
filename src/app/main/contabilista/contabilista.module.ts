@@ -35,7 +35,6 @@ import { ListarContabilistasDoisComponent } from './listar-contabilistas-dois/li
   declarations: [
     ListarContabilistasComponent,
     ListarContabilistasDoisComponent,
-    CriarEditarContabilistasComponent,
     CriarContabilitasComponent,
     EditarContabilistasComponent,
   ],

@@ -68,13 +68,22 @@ tr.mat-row {
   height: auto !important;
 }
 
+tr.example-detail-row {
+  height: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
 .tool-box {
   margin-top: 10px !important;
   padding: 10px 20px 0 20px;
   padding-bottom: 10px;
   position: absolute;
   bottom: 0px;
-  z-index: auto;
+  z-index: 99999;
   background-color: #fff;
   width: calc(100% - 35px);
   border-top: 1px solid #999;
