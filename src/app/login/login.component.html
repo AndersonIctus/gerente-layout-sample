@@ -1,0 +1,53 @@
+<div class="container-fluid m-0 p-0 h-100 min-h-620 row">
+
+  <!-- IMAGEM BACKGROUND -->
+  <div class="bgc-black img-panel m-0 h-100 hidden-xs col-md-7 col-lg-8"></div>
+
+  <!-- DIV DO LOGIN -->
+  <div class="login-panel m-0 h-100 col-md-5 col-lg-4">
+    <div class="logo-panel text-center">
+      <h1>login</h1>
+    </div>
+
+    <form [formGroup]="formLogin" (ngSubmit)="logar(formLogin.value, formLogin.valid)" >
+      <div class="fields-panel">
+        <!-- LOGIN -->
+        <mat-form-field class="form-group" appearance="outline" hideRequiredMarker="true">
+          <mat-label>Usuário</mat-label>
+          <mat-error *ngIf="formLogin.get('login').invalid">{{ getErrorMessage( formLogin.get('login') ) }}</mat-error>
+
+          <input matInput type="text" class="my-form-field mat-form-field-appearance-legacy" formControlName="login" required>
+        </mat-form-field>
+
+        <!-- SENHA -->
+        <mat-form-field class="form-group" appearance="outline" hideRequiredMarker="true">
+          <mat-label>Senha</mat-label>
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error *ngIf="formLogin.get('senha').invalid">{{ getErrorMessage( formLogin.get('senha') ) }}</mat-error>
+
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="senha" required>
+        </mat-form-field>
+
+        <!-- EMPRESA -->
+        <mat-form-field class="form-group" appearance="outline" hideRequiredMarker="true">
+          <mat-label>Empresa</mat-label>
+          <mat-error *ngIf="formLogin.get('empresa').invalid">{{ getErrorMessage( formLogin.get('empresa') ) }}</mat-error>
+
+          <mat-select name="empresa" formControlName="empresa">
+            <mat-option *ngFor="let empresa of empresas" [value]="empresa.idEmpresa">
+              {{ empresa.nome }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="accent" class="login-button col">
+            <span *ngIf="!load_login"><b>Entrar</b></span>
+          <div class="load-spinner mt-2 mb-2 text-center" *ngIf="load_login">
+            <mat-spinner matSuffix diameter="25" color="primary" class="light-colors"></mat-spinner>
+          </div>
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>

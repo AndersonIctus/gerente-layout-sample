@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  margin: 0;
+}
+
+.h-100{
+  height: 100% !important;
+}
+
+.min-h-620 {
+  min-height: 620px !important;
+}
+
+/* .ng-invalid:not(form):not(div):not(mat-form-field) {
+  border-left: 5px solid #a94442; /* red * /
+  border-radius: 8px;
+} */
+
+/* .mat-form-field-appearance-outline .mat-form-field-outline {
+  border-left: 5px solid #a94442;
+  border-radius: 8px;
+  left: -.20em !important;
+} */
+
+.button {
+  outline: none !important;
+}
+
+.button:focus {
+  outline: none !important;
+}
+
+@media (max-width: 991px) and (min-width: 768px){
+  .hidden-sm {
+      display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-xs {
+      display: none !important;
+  }
+}

@@ -1,0 +1,41 @@
+.logo-panel {
+  padding: 40px 0 40px 0;
+}
+
+h1 {
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+.login-button {
+  /* border-radius: 15px !important; */
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+.login-div {
+  padding: 0 20px;
+}
+
+mat-form-field.mat-form-field {
+  display: block;
+  font-size: 14px;
+}
+
+.load-spinner {
+  padding-left: 45% !important;
+}
+
+.bgc-black {
+  background-color: #232937;
+}
+
+.img-panel{
+  background-size: cover;
+  background: transparent url('../../images/posto-de-gasolina.jpg') no-repeat;
+  /* background: image('/src/images/posto-de-gasolina.jpg'); */
+}
+
+.mat-input-flex.mat-form-field-flex {
+  border: 2px solid red;
+}

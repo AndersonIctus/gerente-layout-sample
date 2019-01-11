@@ -1,0 +1,109 @@
+<div class="p-0 pl-2">
+    <div class="main-container">
+      <mat-card class="my-table-card my-table-card-sm p-0 pb-2" style="border-radius: 8px;">
+          <div class="mat-elevation-z8 mb-2">
+            <mat-card-header class="mat-header-class">
+              <mat-card-title class="m-0">
+                <div class="m-0 row">
+                  <h2 class="mr-auto">Contabilistas Dois</h2>
+                  <a mat-raised-button class="btn m-1 mb-2 p-0 h-75" color="primary" routerLink="/home/contabilistas/create" > NOVO </a>
+                </div>
+              </mat-card-title>
+            </mat-card-header>
+          </div>
+
+          <mat-card-content class="my-table-card-content">
+              <div class="table-responsive-sm">
+                <table mat-table  #table [dataSource]="dataSource" aria-label="Elements"
+                      class="table-scrollable table-content"
+                      matSort matSortActive="nome" matSortDirection="asc" >
+
+                  <!-- ID -->
+                  <ng-container matColumnDef="idContabilista" >
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
+                    <td mat-cell class="element-row" *matCellDef="let row">{{ row.idContabilista }}</td>
+                  </ng-container>
+
+                  <!-- SELECT COLUMN -->
+                  <ng-container matColumnDef="select">
+                      <th mat-header-cell *matHeaderCellDef class="pt-2">
+                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                                      [checked]="selection.hasValue() && isAllSelected()"
+                                      [indeterminate]="selection.hasValue() && !isAllSelected()"
+                                      color="primary">
+                        </mat-checkbox>
+                      </th>
+
+                      <td mat-cell class="element-row" (click)="selection.toggle(row)" *matCellDef="let row" class="pt-2">
+                        <mat-checkbox (click)="$event.stopPropagation()"
+                                      (change)="$event ? selection.toggle(row) : null"
+                                      [checked]="selection.isSelected(row)"
+                                      color="primary">
+                        </mat-checkbox>
+                      </td>
+                  </ng-container>
+
+                  <!-- NOME -->
+                  <ng-container matColumnDef="nome">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Nome</b></th>
+                    <td mat-cell class="mr-2" *matCellDef="let row" style="width: 25%;">{{ row.nome }}</td>
+                  </ng-container>
+
+                  <!-- CPF -->
+                  <ng-container matColumnDef="cpf">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header><b>CPF</b></th>
+                    <td mat-cell *matCellDef="let row">{{ row.cpf }}</td>
+                  </ng-container>
+
+                  <!-- CNPJ -->
+                  <ng-container matColumnDef="cnpj">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header><b>CNPJ</b></th>
+                    <td mat-cell *matCellDef="let row">{{ row.cnpj }}</td>
+                  </ng-container>
+
+                  <!-- Telefone -->
+                  <ng-container matColumnDef="fone">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Telefone</b></th>
+                    <td mat-cell *matCellDef="let row">{{ row.fone }}</td>
+                  </ng-container>
+
+                  <!-- Município -->
+                  <ng-container matColumnDef="municipio">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Município</b></th>
+                    <td mat-cell *matCellDef="let row">{{ row.municipio }}</td>
+                  </ng-container>
+
+                  <!-- UF -->
+                  <ng-container matColumnDef="uf">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header><b>UF</b></th>
+                    <td mat-cell *matCellDef="let row">{{ row.uf }}</td>
+                  </ng-container>
+
+                  <!-- EDIT ROW -->
+                  <ng-container matColumnDef="edit" stickyEnd>
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td tabindex="-1" class="p-0" mat-cell [routerLink]="['/home/contabilistas/'+row.idContabilista]" *matCellDef="let row"> <mat-icon color="primary" >create</mat-icon></td>
+                  </ng-container>
+
+                  <!--  -->
+                  <tr mat-header-row color="primary" *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
+                  <tr mat-row class="element-row" [ngClass]="{ 'element-row-selected': selection.isSelected(row) }" *matRowDef="let row; columns: columnsToDisplay;"> </tr>
+                </table>
+              </div>
+
+              <mat-paginator #paginator
+                [length]="dataSource.data.length"
+                [pageIndex]="0"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 15, 20, 40]">
+              </mat-paginator>
+          </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- TOOL BOX -->
+    <div class="tool-box text-right" *ngIf="hasSelectedValue()">
+      <span style="font-family: monospace !important;">Selecionado {{ selection.selected.length }} {{ (selection.selected.length == 1)? 'contabilista' : 'contabilistas' }} </span>
+      <button class="ml-auto" mat-raised-button mat-button color="warn" (click)="openCancelDialog()">DELETAR</button>
+    </div>
+  </div>

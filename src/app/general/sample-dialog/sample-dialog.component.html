@@ -1,0 +1,17 @@
+<div role="dialog">
+  <button type="button" class="close close-button" tabindex="-1" mat-dialog-close aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+  <div mat-dialog-title>
+      <h5 >{{title}}</h5>
+  </div>
+
+  <div mat-dialog-content class="mt-2 mb-2" style="width: 350px;">
+    <p>{{ contentText }}</p>
+  </div>
+
+  <mat-dialog-actions align="end" style="border-top: 1px solid #dcdcdc" >
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Ok</button>
+  </mat-dialog-actions>
+</div>
