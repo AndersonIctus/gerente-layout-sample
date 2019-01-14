@@ -11,8 +11,8 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content>
-    <div class="mat-elevation-z8 mb-2">
+  <mat-sidenav-content class="m-0 p-0 row">
+    <div class="mat-elevation-z8 app-nav">
       <mat-toolbar color="primary">
         <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
@@ -26,10 +26,13 @@
           <li><a class="nav-link" [routerLink]="['/home/contabilistas-dois']" >Contabilista-2</a></li>
         </ul>
       </mat-toolbar>
-
     </div>
 
-    <ng-content></ng-content>
+    <div style="width: 100%; position: relative;">
+      <ng-content></ng-content>
+    </div>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<!-- margin-top: -16px; -->

@@ -1,13 +1,77 @@
-<div class="p-0 pl-2">
-    <div class="main-container">
-      <h1>
-        {{ title }}
-      </h1>
-    </div>
+<div class="page-header">
+  <h1>Novo Contabilista</h1>
+  <div class="tabs-header m-0 p-0">
+    <!-- ANCORAS PARA CADA PARTE DO FORMULÁRIO -->
+    <ul class="pl-3">
+        <li class="active-link"><a class="ancor-scroll" [routerLink]="['\#card-principal']">Principal</a></li>
+        <li><a class="ancor-scroll" [routerLink]="['\#card-geral']">Geral</a></li>
+        <li><a class="ancor-scroll" [routerLink]="['\#card-endereco']">Endereço</a></li>
+    </ul>
+  </div>
+</div>
+
+<form [formGroup]="formModel" (ngSubmit)="salvarAtualizar(formModel.value, formModel.valid)">
+  <div class="main-container">
+    <!-- PRINCIPAL -->
+    <mat-card id="card-principal" class="my-table-card my-table-card-sm p-0 pb-2" style="border-radius: 8px;">
+      <div class="mat-elevation-z8 mb-2">
+        <mat-card-header class="mat-header-class">
+          <mat-card-title class="m-0">
+            <h2 class="mr-auto">Principal</h2>
+          </mat-card-title>
+        </mat-card-header>
+      </div>
+
+      <mat-card-content class="my-table-card-content">
+        <!-- Aqui vai o conteudo  -->
+      </mat-card-content>
+    </mat-card>
+
+    <!-- GERAL -->
+    <mat-card class="my-table-card my-table-card-sm p-0 pb-2" style="border-radius: 8px;">
+        <div id="card-geral" class="mat-elevation-z8 mb-2">
+          <mat-card-header class="mat-header-class">
+            <mat-card-title class="m-0">
+              <h2 class="mr-auto">Geral</h2>
+            </mat-card-title>
+          </mat-card-header>
+        </div>
+  
+        <mat-card-content class="my-table-card-content">
+          <!-- Aqui vai o conteudo  -->
+        </mat-card-content>
+    </mat-card>
+
+    <!-- ENDEREÇO-->
+    <mat-card id="card-endereco" class="my-table-card my-table-card-sm p-0 pb-2" style="border-radius: 8px;">
+        <div class="mat-elevation-z8 mb-2">
+          <mat-card-header class="mat-header-class">
+            <mat-card-title class="m-0">
+              <h2 class="mr-auto">Endereço</h2>
+            </mat-card-title>
+          </mat-card-header>
+        </div>
+  
+        <mat-card-content class="my-table-card-content">
+          <!-- Aqui vai o conteudo  -->
+        </mat-card-content>
+    </mat-card>
+  </div>
 
   <!-- TOOL BOX -->
   <div class="tool-box row m-0">
-    <button class="mr-auto" mat-raised-button mat-button color="accent">VOLTAR</button>
-    <button mat-raised-button mat-button color="primary" >{{salvarEditarText}}</button>
+    <button type="button" class="mr-auto" mat-raised-button mat-button color="accent">VOLTAR</button>
+    <button type="submit" mat-raised-button mat-button color="primary">{{salvarEditarText}}</button>
   </div>
-</div>
+</form>
+
+
+<script type="text/javascript">
+  var $doc = $('html, body');
+  $('.ancor-scroll').click(function() {
+      $doc.animate({
+          scrollTop: $( $.attr(this, 'href') ).offset().top
+      }, 500);
+      return false;
+  });
+</script>

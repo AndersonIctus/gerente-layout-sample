@@ -8,6 +8,57 @@
   max-height: calc(100% - 85px);
 }
 
+.page-header {
+  background: #673ab7;
+}
+
+.active-link {
+  border-bottom: 2px solid #a7b8c0 !important;
+}
+
+.tabs-header ul {
+  display: inline-flex;
+  list-style: none;
+  padding-left: 0;
+  flex-wrap: wrap;
+}
+
+.tabs-header ul li {
+  color: white;
+  list-style-type: none;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 5px 15px;
+}
+
+
+h2 {
+  font-family: monospace;
+  text-transform: uppercase;
+  color: white;
+}
+
+mat-card {
+  margin-bottom: 300px !important;
+}
+
+.mat-card-header {
+  width: 100% !important;
+  padding: 1.2em;
+  border-radius: 8px 8px 0 0;
+  background-color: #473897;
+  padding:5px !important;
+}
+
+.my-table-card {
+  width: 80%;
+  margin: 10px auto;
+}
+
+::ng-deep .mat-card-header-text {
+  width: 100% !important;
+}
+
 .tool-box {
   margin-top: 10px !important;
   padding: 10px 20px 0 20px;
@@ -22,6 +73,12 @@
 
 
 @media (max-width: 640px) {
+  .my-table-card-sm {
+    width: 95%;
+    margin: 1px auto;
+    margin-top: 5px;
+  }
+
   .tool-box {
     width: calc(100% - 12px);
   }

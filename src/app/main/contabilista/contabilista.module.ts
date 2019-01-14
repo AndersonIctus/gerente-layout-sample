@@ -14,10 +14,13 @@ import { CriarContabilitasComponent } from './criar-editar-contabilistas/criar-c
 import { EditarContabilistasComponent } from './criar-editar-contabilistas/editar-contabilistas/editar-contabilistas.component';
 import { SampleDialogComponent } from 'src/app/general/sample-dialog/sample-dialog.component';
 import { ListarContabilistasDoisComponent } from './listar-contabilistas-dois/listar-contabilistas-dois.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule,
 
     GeneralModule,
