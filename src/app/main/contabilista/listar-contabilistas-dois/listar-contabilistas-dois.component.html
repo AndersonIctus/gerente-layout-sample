@@ -6,7 +6,7 @@
               <mat-card-title class="m-0">
                 <div class="m-0 row">
                   <h2 class="mr-auto">Contabilistas Dois</h2>
-                  <a mat-raised-button class="btn m-1 mb-2 p-0 h-75" color="primary" routerLink="/home/contabilistas/create" > NOVO </a>
+                  <a mat-raised-button class="btn m-1 mb-2 p-0 h-75" color="primary" routerLink="/home/contabilistas-dois/create" > NOVO </a>
                 </div>
               </mat-card-title>
             </mat-card-header>
@@ -92,7 +92,7 @@
                   <!-- EDIT ROW -->
                   <ng-container matColumnDef="edit" stickyEnd>
                     <th mat-header-cell *matHeaderCellDef></th>
-                    <td tabindex="-1" class="p-0" mat-cell [routerLink]="['/home/contabilistas/'+row.idContabilista]" *matCellDef="let row"> <mat-icon color="primary" >create</mat-icon></td>
+                    <td tabindex="-1" class="p-0" mat-cell [routerLink]="['/home/contabilistas-dois/'+row.idContabilista]" *matCellDef="let row"> <mat-icon color="primary" >create</mat-icon></td>
                   </ng-container>
 
                   <!-- SELECT DAS LINHAS -->
@@ -118,7 +118,7 @@
     <!-- TOOL BOX -->
     <div class="tool-box text-right" *ngIf="hasSelectedValue()">
       <button class="ml-auto" mat-raised-button mat-button color="warn" (click)="openCancelDialog()">DELETAR</button>
-      <button class="ml-2" mat-raised-button mat-button [routerLink]="['/home/contabilistas/' + expandedElement.idContabilista]"
+      <button class="ml-2" mat-raised-button mat-button [routerLink]="['/home/contabilistas-dois/' + expandedElement.idContabilista]"
               color="primary" >EDITAR</button>
     </div>
 </div>

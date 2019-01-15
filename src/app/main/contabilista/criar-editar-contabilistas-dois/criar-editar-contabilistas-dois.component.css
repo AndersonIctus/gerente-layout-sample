@@ -1,16 +1,13 @@
-html {
-  scroll-behavior: smooth;
-}
 
 .main-container {
   overflow-y: scroll;
   overflow-x: auto;
-  height: calc(602px - 100px);
+  height: 592px;
   padding-bottom: 70px;
-  padding-top: 10px;
 
   max-height: calc(100% - 85px);
   scroll-behavior: smooth;
+  scroll-snap-type: proximity;
 }
 
 .page-header,
@@ -78,6 +75,13 @@ mat-card {
 
 ::ng-deep .mat-card-header-text {
   width: 100% !important;
+}
+
+.sticky{
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  z-index: 10;
 }
 
 .tool-box {
