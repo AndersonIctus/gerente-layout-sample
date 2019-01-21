@@ -31,7 +31,7 @@ export class ToastService {
       'debug': false,
       'newestOnTop': false,
       'progressBar': false,
-      'positionClass': 'toast-bottom-full-width',
+      // 'positionClass': 'toast-top-full-width',
       'preventDuplicates': false,
       'onclick': null,
       'showDuration': '300',

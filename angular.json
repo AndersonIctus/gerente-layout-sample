@@ -4,7 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "gerente-layout-sample": {
-      "root": "",
+      "root": "src",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/sass/styles.scss"
             ],
             "scripts": []
           },
@@ -123,5 +123,11 @@
       }
     }
   },
-  "defaultProject": "gerente-layout-sample"
+  "defaultProject": "gerente-layout-sample",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
+
 }

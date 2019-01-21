@@ -1,5 +1,5 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { CriarEditarContabilistasComponent } from '../criar-editar-contabilistas.component';
+import { CriarEditarContabilistasTresComponent } from '../criar-editar-contabilistas-tres.component';
 import { FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastService } from 'src/app/general/toast.service';
@@ -10,10 +10,10 @@ import { Municipio } from '../../model/Municipio';
 import { Contabilista } from '../../model/Contabilista';
 
 @Component({
-  templateUrl: '../criar-editar-contabilistas.component.html',
-  styleUrls: [ '../criar-editar-contabilistas.component.scss']
+  templateUrl: '../criar-editar-contabilistas-tres.component.html',
+  styleUrls: [ '../criar-editar-contabilistas-tres.component.scss']
 })
-export class EditarContabilistasComponent extends CriarEditarContabilistasComponent implements OnInit {
+export class EditarContabilistasTresComponent extends CriarEditarContabilistasTresComponent implements OnInit {
 
   contabilista: Contabilista;
 
@@ -31,7 +31,7 @@ export class EditarContabilistasComponent extends CriarEditarContabilistasCompon
   ngOnInit(): void {
     super.ngOnInit();
 
-    this.title = 'Editar Contabilista';
+    this.title = 'Editar Contabilista TRÊS';
     this.salvarEditarText = 'EDITAR';
 
     const id = +this.route.snapshot.paramMap.get('idContabilista');

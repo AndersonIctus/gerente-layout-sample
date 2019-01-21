@@ -5,7 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatCardModule, MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule,
         MatButtonToggleModule, MatCheckboxModule,
-        MatIconModule} from '@angular/material';
+        MatIconModule, MatFormFieldModule, MatDialogModule, MatToolbarModule, MatSidenavModule,
+        MatListModule, MatInputModule, MatSelectModule, MatOptionModule, MatProgressSpinnerModule} from '@angular/material';
 
 import { GeneralModule } from 'src/app/general/general.module';
 
@@ -21,6 +22,14 @@ import { EditarContabilistasDoisComponent } from './criar-editar-contabilistas-d
 // tslint:disable-next-line:max-line-length
 import { CriarContabilitasDoisComponent } from './criar-editar-contabilistas-dois/criar-contabilistas-dois/criar-contabilistas-dois.component';
 
+// tslint:disable-next-line:max-line-length
+import { EditarContabilistasTresComponent } from './criar-editar-contabilistas-tres/editar-contabilistas-tres/editar-contabilistas-tres.component';
+// tslint:disable-next-line:max-line-length
+import { CriarContabilitasTresComponent } from './criar-editar-contabilistas-tres/criar-contabilistas-tres/criar-contabilistas-tres.component';
+
+import { LayoutModule } from '@angular/cdk/layout';
+import { GeneralDialogComponent } from 'src/app/general/general-dialog/general-dialog.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -30,14 +39,31 @@ import { CriarContabilitasDoisComponent } from './criar-editar-contabilistas-doi
 
     GeneralModule,
 
-    MatCardModule, MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule,
-    MatButtonModule, MatButtonToggleModule, MatCheckboxModule, MatIconModule,
+    LayoutModule,
+    MatDialogModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatProgressSpinnerModule,
+
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatButtonToggleModule, MatCheckboxModule,
+
     ScrollDispatchModule
-    // ScrollingModule
   ],
   declarations: [
     ListarContabilistasComponent, CriarContabilitasComponent, EditarContabilistasComponent,
     ListarContabilistasDoisComponent, CriarContabilitasDoisComponent, EditarContabilistasDoisComponent,
+    EditarContabilistasTresComponent, CriarContabilitasTresComponent
   ],
   exports: [
       ListarContabilistasComponent,
@@ -46,7 +72,8 @@ import { CriarContabilitasDoisComponent } from './criar-editar-contabilistas-doi
       EditarContabilistasComponent
   ],
   entryComponents: [
-    SampleDialogComponent
+    SampleDialogComponent,
+    GeneralDialogComponent
   ]
 })
 export class ContabilistaModule { }

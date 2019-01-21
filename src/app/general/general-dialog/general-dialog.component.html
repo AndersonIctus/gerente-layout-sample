@@ -1,0 +1,53 @@
+
+<div role="dialog">
+  <button type="button" class="close close-button" tabindex="-1" mat-dialog-close aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+  <div mat-dialog-title>
+      <h5 >{{title}}</h5>
+  </div>
+
+  <mat-form-field class="w-100">
+    <mat-label>Código ou Município</mat-label>
+    <mat-icon matSuffix mat-button style="cursor: pointer;" (click)="searchFilter();">search</mat-icon>
+
+    <input #filter matInput placeholder="Digite o Código ou Município" (keyup)="filterInput($event);">
+  </mat-form-field>
+
+  <div mat-dialog-content class="mt-2 mb-2" style="min-width: 350px;">
+    <!-- CONTEÚDO DO DIALOG -->
+    <div class="table-responsive-sm">
+      <table mat-table matSort #table [dataSource]="dataSource" aria-label="Elements"
+            class="table-scrollable table-content" matSortActive="municipio" matSortDirection="asc" >
+
+        <!-- CODIGO -->
+        <ng-container matColumnDef="codigo" >
+          <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Código</b></th>
+          <td mat-cell *matCellDef="let row">{{ row.codigo }}</td>
+        </ng-container>
+
+        <!-- MUNICIPIO -->
+        <ng-container matColumnDef="descricao" >
+          <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Município</b></th>
+          <td mat-cell *matCellDef="let row">{{ row.descricao }}</td>
+        </ng-container>
+
+        <!--  -->
+        <tr mat-header-row color="primary" *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
+        <tr mat-row (click)="choseRow(row)" class="element-row" *matRowDef="let row; columns: columnsToDisplay;"> </tr>
+      </table>
+    </div>
+  </div>
+
+  <mat-paginator #paginator
+    [length]="dataSource.data.length"
+    [pageIndex]="0"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 15, 20, 40]">
+  </mat-paginator>
+
+  <mat-dialog-actions align="end" style="border-top: 1px solid #dcdcdc" >
+    <button cdkFocusInitial mat-button mat-dialog-close>Cancelar</button>
+    <!-- <button mat-button [mat-dialog-close]="getResponse()" cdkFocusInitial>Ok</button> -->
+  </mat-dialog-actions>
+</div>

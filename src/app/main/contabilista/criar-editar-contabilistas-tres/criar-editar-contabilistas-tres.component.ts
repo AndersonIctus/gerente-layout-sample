@@ -1,22 +1,19 @@
 import { OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ValidationErrors } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastService } from 'src/app/general/toast.service';
 import { ScrollDispatcher, CdkScrollable } from '@angular/cdk/overlay';
 import { GeneralDialogService } from 'src/app/general/general-dialog/general-dialog.service';
 import { Municipio } from '../model/Municipio';
 
-export abstract class CriarEditarContabilistasComponent implements OnInit {
+export abstract class CriarEditarContabilistasTresComponent implements OnInit {
 
-  public title = 'Criar Contabilista';
+  public title = 'Criar Contabilista TRÊS';
   public salvarEditarText = 'SALVAR';
   public active_menu = 'geral';
 
   @ViewChild('geralPosition') geralPosition: ElementRef;
   @ViewChild('enderecoPosition') enderecoPosition: ElementRef;
-
-  // @ViewChild(MatPaginator) paginator: MatPaginator;
-  // @ViewChild(MatSort) sort: MatSort;
 
   routerLink = '/home/contabilistas';
 
@@ -43,13 +40,6 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
               sum: observe.getElementRef().nativeElement.offsetTop + observe.getElementRef().nativeElement.scrollTop
           };
 
-          // console.log( 'observe scroll .. ');
-          // console.log( {
-          //                geral: this.geralPosition.nativeElement.offsetTop,
-          //             endereco: this.enderecoPosition.nativeElement.offsetTop,
-          //              observe: offsets
-          //         } );
-
           this.zone.run( () => {
             if ( offsets.sum - 100 <= this.geralPosition.nativeElement.offsetTop ) {
               this.active_menu = 'geral';
@@ -60,14 +50,7 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
     });
   }
 
-  // scroll(el: HTMLElement) {
-  //   // el.nativeElement.scrollIntoView({ behavior: 'smooth' });
-  //   el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  // }
-
-
   abstract salvarAtualizar(formModelValue, isValid);
-
 
   bind() {
     this.formModel = this.formBuilder.group({
@@ -102,8 +85,7 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
     const control = this.formModel.get(nameControl);
     if ( !control.errors ) { return ''; }
 
-    // if ( control.hasError('required') ) { return ''; }
-
+    if ( control.hasError('required') ) { return 'Campo obrigatório'; }
 
     return `erro detectado !! => '${nameControl}'`;
   }
@@ -144,7 +126,7 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
 
   callCodMunicipioDialog() {
     // this.toast.success('pressed IBGE icon !!');
-    const ret = this.dialog.openDialog('Teste Dialog', ['codigo', 'descricao'], Municipio.model);
+    const ret = this.dialog.openDialog('Municípios', ['codigo', 'descricao'], Municipio.model);
     ret
       .beforeClose()
       .subscribe( (result: Municipio) => {

@@ -1,18 +1,17 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { CriarEditarContabilistasComponent } from '../criar-editar-contabilistas.component';
+import { CriarEditarContabilistasTresComponent } from '../criar-editar-contabilistas-tres.component';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastService } from 'src/app/general/toast.service';
 import { ScrollDispatcher } from '@angular/cdk/overlay';
-import { DialogService } from 'src/app/general/sample-dialog/dialog.service';
 import { GeneralDialogService } from 'src/app/general/general-dialog/general-dialog.service';
 import { Municipio } from '../../model/Municipio';
 
 @Component({
-  templateUrl: '../criar-editar-contabilistas.component.html',
-  styleUrls: [ '../criar-editar-contabilistas.component.scss']
+  templateUrl: '../criar-editar-contabilistas-tres.component.html',
+  styleUrls: [ '../criar-editar-contabilistas-tres.component.scss']
 })
-export class CriarContabilitasComponent extends CriarEditarContabilistasComponent implements OnInit {
+export class CriarContabilitasTresComponent extends CriarEditarContabilistasTresComponent implements OnInit {
   constructor(
     formBuilder: FormBuilder,
     dialog: GeneralDialogService<Municipio>,

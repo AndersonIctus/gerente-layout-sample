@@ -1,7 +1,9 @@
+@import '../../../../sass/styles';
+
 .main-container {
   overflow-y: scroll;
   overflow-x: auto;
-  height: 569px;
+  height: 592px;
   padding-bottom: 70px;
   padding-top: 0;
 
@@ -12,7 +14,8 @@
   width: 100% !important;
   padding: 1.2em;
   border-radius: 8px 8px 0 0;
-  background-color: #473897;
+  // background-color: #473897;
+  background-color: mat-color($primary, .9);
   padding:5px !important;
 }
 
@@ -38,6 +41,7 @@ h2 {
 .table-content {
   width: 99%;
   margin: auto;
+  min-width: 700px;
 }
 
 .element-row {
@@ -74,10 +78,17 @@ tr.mat-row {
   padding-bottom: 10px;
   position: absolute;
   bottom: 0px;
-  z-index: auto;
+  z-index: 9;
   background-color: #fff;
   width: calc(100% - 35px);
   border-top: 1px solid #999;
+}
+
+.bodycontainer {
+  width: 100%;
+  margin: 0;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 @media (max-width: 640px) {

@@ -1,7 +1,7 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
-import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -9,6 +9,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
          MatListModule, MatInputModule, MatFormFieldModule, MatCardModule,
          MatSelectModule, MatOptionModule, MatProgressSpinnerModule, MatTableModule,
          MatPaginatorModule, MatSortModule } from '@angular/material';
+
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,7 @@ import { GeneralModule } from './general/general.module';
   declarations: [
     AppComponent,
     MenuComponent,
+
     LoginComponent,
     MainComponent
   ],
@@ -55,7 +57,9 @@ import { GeneralModule } from './general/general.module';
 
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+
+    NgbModule.forRoot()
   ],
   providers: [ ],
   bootstrap: [AppComponent]

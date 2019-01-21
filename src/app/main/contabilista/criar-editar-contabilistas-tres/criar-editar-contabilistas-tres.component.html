@@ -1,4 +1,3 @@
-
 <!-- INNER HEADER -->
 <div class="page-header pl-3">
   <div class="header-title">
@@ -8,8 +7,8 @@
   <div class="header-menu header-title m-0 p-0">
     <!-- ANCORAS PARA CADA PARTE DO FORMULÁRIO -->
     <ul class="mb-1">
-        <li [class.is-active]="active_menu === 'geral'">    <a (click)="active_menu = 'geral'" class="ancor-scroll mat-button text-center" href='home/contabilistas/create#card_geral' >Geral</a></li>
-        <li [class.is-active]="active_menu === 'endereco'"> <a (click)="active_menu = 'endereco'" class="ancor-scroll mat-button text-center" href="home/contabilistas/create#card_endereco">Endereço</a></li>
+        <li [class.is-active]="active_menu === 'geral'">    <a (click)="active_menu = 'geral'" class="ancor-scroll mat-button text-center" href='home/contabilistas-tres/create#card_geral' >Geral</a></li>
+        <li [class.is-active]="active_menu === 'endereco'"> <a (click)="active_menu = 'endereco'" class="ancor-scroll mat-button text-center" href="home/contabilistas-tres/create#card_endereco">Endereço</a></li>
     </ul>
   </div>
 </div>
@@ -26,9 +25,9 @@
           </mat-card-title>
         </mat-card-header>
 
-        <mat-card-content class="my-table-card-content">
+        <mat-card-content class="p-0 pt-2 my-table-card-content">
           <!-- NOME -->
-          <mat-form-field class="form-group w-100" appearance="fill" hideRequiredMarker="true" required>
+          <mat-form-field class="col-sm-8 col-md-6" appearance="fill" hideRequiredMarker="true" required>
             <mat-label>Nome</mat-label>
             <mat-error *ngIf="formModel.get('nome').invalid">{{ getErrorMessage( 'nome' ) }}</mat-error>
 
@@ -36,14 +35,14 @@
           </mat-form-field>
 
           <!-- CNPJ -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true">
+          <mat-form-field class="col-sm-4 col-md-3" appearance="fill"  hideRequiredMarker="true">
             <mat-label>CNPJ</mat-label>
 
             <input matInput formControlName="cnpj" type="text" class="form-control-sm">
           </mat-form-field>
 
           <!-- CPF -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true" required>
+          <mat-form-field class="col-sm-4 col-md-3" appearance="fill"  hideRequiredMarker="true" required>
             <mat-label>CPF</mat-label>
             <mat-error *ngIf="formModel.get('cpf').invalid">{{ getErrorMessage( 'cpf' ) }}</mat-error>
 
@@ -51,30 +50,32 @@
           </mat-form-field>
 
           <!-- CRC -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true" required>
+          <mat-form-field class="col-sm-4 col-md-4" appearance="fill"  hideRequiredMarker="true" required>
             <mat-label>CRC</mat-label>
             <mat-error *ngIf="formModel.get('crc').invalid">{{ getErrorMessage( 'crc' ) }}</mat-error>
 
             <input matInput formControlName="crc" type="text" class="form-control-sm">
           </mat-form-field>
 
-          <!-- TELEFONE -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true" required>
-            <mat-label>Telefone</mat-label>
-            <mat-error *ngIf="formModel.get('fone').invalid">{{ getErrorMessage( 'fone' ) }}</mat-error>
+          <div>
+            <!-- TELEFONE -->
+            <mat-form-field class="col-sm-6" appearance="fill"  hideRequiredMarker="true" required>
+              <mat-label>Telefone</mat-label>
+              <mat-error *ngIf="formModel.get('fone').invalid">{{ getErrorMessage( 'fone' ) }}</mat-error>
 
-            <input matInput formControlName="fone" type="text" class="form-control-sm">
-          </mat-form-field>
+              <input matInput formControlName="fone" type="text" class="form-control-sm">
+            </mat-form-field>
 
-          <!-- FAX -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true">
-            <mat-label>FAX</mat-label>
+            <!-- FAX -->
+            <mat-form-field class="col-sm-6" appearance="fill"  hideRequiredMarker="true">
+              <mat-label>FAX</mat-label>
 
-            <input matInput formControlName="fax" type="text" class="form-control-sm">
-          </mat-form-field>
+              <input matInput formControlName="fax" type="text" class="form-control-sm">
+            </mat-form-field>
+          </div>
 
           <!-- EMAIL -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true">
+          <mat-form-field class="col" appearance="fill"  hideRequiredMarker="true">
             <mat-label>E-Mail</mat-label>
 
             <input matInput formControlName="email" type="text" class="form-control-sm">
@@ -92,9 +93,9 @@
           </mat-card-title>
         </mat-card-header>
 
-        <mat-card-content class="my-table-card-content">
+        <mat-card-content class="p-0 pt-2 my-table-card-content">
           <!-- ENDEREÇO -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true" required>
+          <mat-form-field class="col-sm-8 col-md-9 col-lg-10" appearance="fill"  hideRequiredMarker="true" required>
             <mat-label>Endereço</mat-label>
             <mat-error *ngIf="formModel.get('endereco').invalid">{{ getErrorMessage( 'endereco' ) }}</mat-error>
 
@@ -102,7 +103,7 @@
           </mat-form-field>
 
           <!-- NUMERO -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true" required>
+          <mat-form-field class="col-6 col-md-3 col-lg-2" appearance="fill"  hideRequiredMarker="true" required>
             <mat-label>Número</mat-label>
             <mat-error *ngIf="formModel.get('numero').invalid">{{ getErrorMessage( 'numero' ) }}</mat-error>
 
@@ -110,51 +111,46 @@
           </mat-form-field>
 
           <!-- COMPLEMENTO -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true">
+          <mat-form-field class="col-6 col-sm-6" appearance="fill"  hideRequiredMarker="true">
             <mat-label>Complemento</mat-label>
 
             <input matInput formControlName="complemento" type="text" class="form-control-sm">
           </mat-form-field>
 
           <!-- BAIRRO -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true" required>
+          <mat-form-field class="col-6 col-sm-6" appearance="fill"  hideRequiredMarker="true" required>
             <mat-label>Bairro</mat-label>
             <mat-error *ngIf="formModel.get('bairro').invalid">{{ getErrorMessage( 'bairro' ) }}</mat-error>
 
             <input matInput formControlName="bairro" type="text" class="form-control-sm">
           </mat-form-field>
 
-          <!-- COD. MUNICIPIO IBGE -->
-          <div class="row">
-            <div class="col-7 col-md-7">
-              <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true" required>
-                <mat-label>Cod. Município IBGE</mat-label>
-                <mat-error *ngIf="formModel.get('codMunicipio').invalid">{{ getErrorMessage( 'codMunicipio' ) }}</mat-error>
-
-                <mat-icon matSuffix mat-button style="cursor: pointer;" (click)="callCodMunicipioDialog();">search</mat-icon>
-
-                <input matInput formControlName="codMunicipio" type="text" class="form-control-sm">
-              </mat-form-field>
-            </div>
-
-            <div class="col-5 col-md-5">
-                <mat-form-field class="form-group w-100" appearance="fill" hideRequiredMarker="true">
-                  <mat-label>Descrição</mat-label>
-                  <input matInput formControlName="codMunicipioDescricao" type="text" class="form-control-sm">
-                </mat-form-field>
-            </div>
-          </div>
-
           <!-- CEP -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true" required>
+          <mat-form-field class="col-6 col-sm-6 col-md-4" appearance="fill"  hideRequiredMarker="true" required>
             <mat-label>CEP</mat-label>
             <mat-error *ngIf="formModel.get('cep').invalid">{{ getErrorMessage( 'cep' ) }}</mat-error>
 
             <input matInput formControlName="cep" type="text" class="form-control-sm">
           </mat-form-field>
 
+          <!-- COD. MUNICIPIO IBGE -->
+          <mat-form-field class="col-sm-5 col-md-4 col-lg-3" appearance="fill"  hideRequiredMarker="true" required>
+            <mat-label>Cod. Município IBGE</mat-label>
+            <mat-error *ngIf="formModel.get('codMunicipio').invalid">{{ getErrorMessage( 'codMunicipio' ) }}</mat-error>
+
+            <mat-icon matSuffix mat-button style="cursor: pointer;" (click)="callCodMunicipioDialog();">search</mat-icon>
+
+            <input matInput formControlName="codMunicipio" type="text" class="form-control-sm">
+          </mat-form-field>
+
+          <!-- COD. MUNICIPIO IBGE (DESCRICAO) -->
+          <mat-form-field class="col-9 col-sm-6 col-md-4 col-lg-4" appearance="fill" hideRequiredMarker="true">
+            <mat-label>Descrição</mat-label>
+            <input matInput formControlName="codMunicipioDescricao" type="text" class="form-control-sm">
+          </mat-form-field>
+
           <!-- UF -->
-          <mat-form-field class="form-group w-100" appearance="fill"  hideRequiredMarker="true">
+          <mat-form-field class="col-3 col-sm-2 col-lg-1" appearance="fill"  hideRequiredMarker="true">
             <mat-label>UF</mat-label>
 
             <input matInput formControlName="ufDisabled" type="text" class="form-control-sm">

@@ -1,0 +1,135 @@
+@import '../../../../sass/styles';
+
+/************** HEADER ***************/
+.header-menu ul {
+  display: inline-flex;
+  list-style: none;
+  padding-left: 0;
+  flex-wrap: wrap;
+}
+
+.header-menu ul li {
+  color: white;
+  list-style-type: none;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 5px 15px;
+  text-align: center;
+}
+
+.header-menu ul li:hover {
+  -moz-opacity: 0.50;
+  opacity: .70;
+}
+
+.page-header,
+.header-menu {
+  background: mat-color($primary, .9);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+h1, h2 {
+  margin-bottom: 0;
+  font-family: monospace;
+  text-transform: uppercase;
+  color: white;
+}
+
+/************** MAIN CONTENT ***************/
+.main-container {
+  overflow-y: scroll;
+  overflow-x: auto;
+  height: calc(602px - 100px);
+  padding-bottom: 90px;
+  padding-top: 10px;
+
+  max-height: calc(100% - 85px);
+  scroll-behavior: smooth;
+}
+
+.anchor {
+  height: 1px;
+}
+
+.is-active {
+  border-bottom: 2px solid #a7b8c0 !important;
+}
+
+.mat-card-header {
+  width: 100% !important;
+  padding: 1.2em;
+  border-radius: 8px 8px 0 0;
+  background-color: mat-color($primary, .9);
+  padding:5px !important;
+}
+
+::ng-deep .mat-card-header-text {
+  width: 100% !important;
+}
+
+.my-table-card {
+  width: 85%;
+  margin: 10px auto;
+}
+
+mat-card mat-card-content {
+  padding: 10px 20px;
+}
+
+::ng-deep .mat-form-field-disabled .mat-form-field-wrapper .mat-form-field-flex {
+  background: #dcdcdc;
+}
+
+::ng-deep .mat-form-field-disabled .mat-form-field-label {
+  color: #24222e !important; }
+
+ ::ng-deep .mat-input-element:disabled {
+  color: #24222e !important;
+  font-weight: bold;
+ }
+
+/************** FIELDS STYLE ***************/
+
+/* :host(.mat-form-field .ng-valid) >>> .mat-form-field-ripple {
+  background-color: green;
+} */
+
+/* :host-context() .mat-form-field-ripple {
+  background-color: green;
+} */
+
+// .mat-focused .mat-form-field-label{ color: #ee6e73; }
+// .mat-focused .mat-form-field-underline .mat-form-field-ripple{ background: #ee6e73; }
+
+/************** FOOTER ***************/
+.tool-box {
+  margin-top: 10px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+
+  padding: 10px 20px 0 20px;
+  padding-bottom: 10px;
+  position: absolute;
+  bottom: 0px;
+  z-index: 99999;
+  background-color: #fff;
+  width: calc(100% - 4%);
+  border-top: 2px solid #999;
+}
+
+/************** MEDIA ALTERS ***************/
+@media (max-width: 640px) {
+  .my-table-card-sm {
+    width: 95%;
+    margin: 1px auto;
+    margin-top: 5px;
+  }
+
+  .tool-box {
+    width: calc(100% - 5%);
+  }
+}

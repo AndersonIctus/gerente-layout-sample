@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SampleDialogComponent } from './sample-dialog/sample-dialog.component';
+import { MatButtonModule, MatDialogModule, MatSortModule, MatPaginatorModule, MatTableModule,
+        MatProgressSpinnerModule, MatSelectModule, MatOptionModule, MatCardModule, MatFormFieldModule,
+        MatInputModule, MatListModule, MatIconModule, MatSidenavModule, MatToolbarModule, MatCheckboxModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+
 import { ToastService } from './toast.service';
 import { DialogService } from './sample-dialog/dialog.service';
-import { SampleDialogComponent } from './sample-dialog/sample-dialog.component';
-import { MatButtonModule, MatDialogModule } from '@angular/material';
-import { LayoutModule } from '@angular/cdk/layout';
+
+import { GeneralDialogComponent } from './general-dialog/general-dialog.component';
+import { GeneralDialogService } from './general-dialog/general-dialog.service';
 
 @NgModule({
   imports: [
@@ -14,12 +20,31 @@ import { LayoutModule } from '@angular/cdk/layout';
     LayoutModule,
     MatButtonModule,
     MatDialogModule,
+    LayoutModule,
+    MatDialogModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatProgressSpinnerModule,
+    MatCheckboxModule,
+
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
-  declarations: [ SampleDialogComponent ],
-  exports: [ SampleDialogComponent ],
+  declarations: [ SampleDialogComponent, GeneralDialogComponent ],
+  exports: [ SampleDialogComponent, GeneralDialogComponent ],
   providers: [
     ToastService,
-    DialogService
+    DialogService,
+    GeneralDialogService
   ]
 })
 export class GeneralModule { }

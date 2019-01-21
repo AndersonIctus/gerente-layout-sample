@@ -10,7 +10,7 @@ import { DialogService } from 'src/app/general/sample-dialog/dialog.service';
 @Component({
   selector: 'app-listar-contabilistas',
   templateUrl: './listar-contabilistas.component.html',
-  styleUrls: ['./listar-contabilistas.component.css']
+  styleUrls: ['./listar-contabilistas.component.scss']
 })
 export class ListarContabilistasComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
