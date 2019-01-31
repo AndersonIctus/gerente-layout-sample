@@ -1,4 +1,4 @@
-import { OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { OnInit, ViewChild, ElementRef, NgZone, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastService } from 'src/app/general/toast.service';
@@ -15,8 +15,7 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
   @ViewChild('geralPosition') geralPosition: ElementRef;
   @ViewChild('enderecoPosition') enderecoPosition: ElementRef;
 
-  // @ViewChild(MatPaginator) paginator: MatPaginator;
-  // @ViewChild(MatSort) sort: MatSort;
+  height = 592;
 
   routerLink = '/home/contabilistas';
 
@@ -31,6 +30,12 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
     public zone: NgZone
   ) { }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    // console.log( JSON.stringify(this.main_container) );
+    this.height = event.target.innerHeight - 64 - 39 - 52;
+  }
+
   ngOnInit(): void {
     this.bind();
 
@@ -43,13 +48,6 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
               sum: observe.getElementRef().nativeElement.offsetTop + observe.getElementRef().nativeElement.scrollTop
           };
 
-          // console.log( 'observe scroll .. ');
-          // console.log( {
-          //                geral: this.geralPosition.nativeElement.offsetTop,
-          //             endereco: this.enderecoPosition.nativeElement.offsetTop,
-          //              observe: offsets
-          //         } );
-
           this.zone.run( () => {
             if ( offsets.sum - 100 <= this.geralPosition.nativeElement.offsetTop ) {
               this.active_menu = 'geral';
@@ -58,16 +56,11 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
             }
           });
     });
+
+    this.height = window.innerHeight - 64 - 39 - 52;
   }
 
-  // scroll(el: HTMLElement) {
-  //   // el.nativeElement.scrollIntoView({ behavior: 'smooth' });
-  //   el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  // }
-
-
   abstract salvarAtualizar(formModelValue, isValid);
-
 
   bind() {
     this.formModel = this.formBuilder.group({

@@ -30,9 +30,11 @@ mat-form-field.mat-form-field {
   background-color: #232937;
 }
 
-.img-panel{
-  background-size: cover;
-  background: transparent url('../../images/posto-de-gasolina.jpg') no-repeat;
+.img-panel {  
+  max-width: 100%;
+  max-height: 100%;
+    
+  background: transparent url('../../images/posto-de-gasolina.png') no-repeat;
   /* background: image('/src/images/posto-de-gasolina.jpg'); */
 }
 

@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
-import { DataSourceAdapter } from 'src/app/general/DataSourceAdapter';
 
 import { Contabilista, ContabilistaSort } from '../model/Contabilista';
 import { Router } from '@angular/router';
@@ -16,6 +15,10 @@ export class ListarContabilistasComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+  @ViewChild('main_container') main_container: ElementRef;
+
+  height = 592;
+
   selection = new SelectionModel<Contabilista>(true, []);
   dataSource: MatTableDataSource<Contabilista>;
 
@@ -29,10 +32,18 @@ export class ListarContabilistasComponent implements OnInit {
     private router: Router
   ) { }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    // console.log( JSON.stringify(this.main_container) );
+    this.height = event.target.innerHeight - 64;
+  }
+
   ngOnInit() {
       this.dataSource = new MatTableDataSource(Contabilista.model);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+
+      this.height = window.innerHeight - 64;
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
