@@ -21,6 +21,7 @@ import { EditarContabilistasDoisComponent } from './main/contabilista/criar-edit
 import { CriarContabilitasTresComponent } from './main/contabilista/criar-editar-contabilistas-tres/criar-contabilistas-tres/criar-contabilistas-tres.component';
 // tslint:disable-next-line:max-line-length
 import { EditarContabilistasTresComponent } from './main/contabilista/criar-editar-contabilistas-tres/editar-contabilistas-tres/editar-contabilistas-tres.component';
+import { TemasComponent } from './main/temas/temas.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -33,12 +34,14 @@ const routes: Routes = [
       { path: 'contabilistas/create', component: CriarContabilitasComponent },
       { path: 'contabilistas/:idContabilista', component: EditarContabilistasComponent },
 
-      { path: 'contabilistas-dois', component: ListarContabilistasDoisComponent },
-      { path: 'contabilistas-dois/create', component: CriarContabilitasDoisComponent },
-      { path: 'contabilistas-dois/:idContabilista', component: EditarContabilistasDoisComponent },
+      // { path: 'contabilistas-dois', component: ListarContabilistasDoisComponent },
+      // { path: 'contabilistas-dois/create', component: CriarContabilitasDoisComponent },
+      // { path: 'contabilistas-dois/:idContabilista', component: EditarContabilistasDoisComponent },
 
-      { path: 'contabilistas-tres/create', component: CriarContabilitasTresComponent },
-      { path: 'contabilistas-tres/:idContabilista', component: EditarContabilistasTresComponent },
+      // { path: 'contabilistas-tres/create', component: CriarContabilitasTresComponent },
+      // { path: 'contabilistas-tres/:idContabilista', component: EditarContabilistasTresComponent },
+
+      { path: 'temas', component: TemasComponent },
     ]
   }
 ];

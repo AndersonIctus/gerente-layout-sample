@@ -1,0 +1,78 @@
+@import '../../../sass/styles.scss';
+
+// -------------------- TEMAS --------------------
+$default: map-get($my-light-theme, primary);
+$alternative-1: map-get($my-other-theme, primary);
+$alternative-2: map-get($my-dark-theme, primary);
+
+.tema-default {
+  background-color: mat-color($default) !important;
+}
+
+.tema-alternative-1 {
+  background-color: mat-color($alternative-1) !important;
+}
+
+.tema-alternative-2 {
+  background-color: mat-color($alternative-2) !important;
+}
+//----------------------------------------
+
+.main-container {
+  overflow-y: scroll;
+  overflow-x: auto;
+  padding-bottom: 70px;
+  padding-top: 0;
+
+  max-height: calc(100% - 85px);
+}
+
+.mat-card-header {
+  width: 100% !important;
+  padding: 1.2em;
+  border-radius: 8px 8px 0 0;
+  // background-color: mat-color($primary, .9);
+  padding:5px !important;
+}
+
+::ng-deep .mat-card-header-text {
+  width: 100% !important;
+}
+
+.my-table-card {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.my-table-card-content {
+  border-top: 1px solid #d0d0d0;
+}
+
+h2 {
+  font-family: monospace;
+  // text-transform: uppercase;
+  color: white;
+}
+
+.bodycontainer {
+  width: 100%;
+  margin: 0;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+  .my-table-card-sm {
+    width: 95%;
+    margin: 1px auto;
+    margin-top: 5px;
+  }
+
+  .table-content {
+    width: 90%;
+  }
+
+  .tool-box {
+    width: calc(100% - 12px);
+  }
+}

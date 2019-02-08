@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
-import { Contabilista, ContabilistaSort } from '../model/Contabilista';
+import { Contabilista } from '../model/Contabilista';
 import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { DialogService } from 'src/app/general/sample-dialog/dialog.service';

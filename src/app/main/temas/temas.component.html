@@ -1,0 +1,35 @@
+<div class="p-0 pl-2">
+  <div [style.height.px]="height" #main_container class="main-container">
+    <mat-card class="my-table-card my-table-card-sm p-0 pb-2" style="border-radius: 8px;">
+        <div class="mat-elevation-z8 mb-2">
+          <mat-card-header class="mat-header-class" color="primary">
+            <mat-card-title class="m-0">
+              <div class="m-0 row">
+                <h2 class="mr-auto">Escolha um Tema de sua Preferência</h2>
+              </div>
+            </mat-card-title>
+          </mat-card-header>
+        </div>
+
+        <mat-card-content class="my-table-card-content">
+            <div class="table-responsive-sm">
+              <div class="bodycontainer scrollable p-3">
+                  <h1> Tema Atual : {{ temaAtual }}</h1>
+                  <div class="form-group row text-center col">
+                    <button mat-raised-button (click)="changeTheme('default')" class="tema-default mr-auto" color="primary">Tema Padrão</button>
+                    <button mat-raised-button (click)="changeTheme('alternative-1')" class="tema-alternative-1 mr-auto" color="primary">Tema Alternativo 1</button>
+                    <button mat-raised-button (click)="changeTheme('alternative-2')" class="tema-alternative-2" color="primary">Tema Alternativo 2</button>
+                  </div>
+
+                  <h1> Temas dos botões </h1>
+                  <div class="form-group row text-center col">
+                    <button mat-raised-button color="primary" class="mr-2">Primário</button>
+                    <button mat-raised-button color="accent"class="mr-2" >Secundário</button>
+                    <button mat-raised-button color="warn">Avisos</button>
+                  </div>
+              </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+  </div>
+</div>

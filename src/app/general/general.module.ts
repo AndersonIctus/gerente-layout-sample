@@ -12,6 +12,7 @@ import { DialogService } from './sample-dialog/dialog.service';
 
 import { GeneralDialogComponent } from './general-dialog/general-dialog.component';
 import { GeneralDialogService } from './general-dialog/general-dialog.service';
+import { ChangeThemeService } from './themes/change-theme.service';
 
 @NgModule({
   imports: [
@@ -44,7 +45,8 @@ import { GeneralDialogService } from './general-dialog/general-dialog.service';
   providers: [
     ToastService,
     DialogService,
-    GeneralDialogService
+    GeneralDialogService,
+    ChangeThemeService
   ]
 })
 export class GeneralModule { }

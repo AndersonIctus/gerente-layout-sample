@@ -11,9 +11,9 @@ export class DialogService {
     public dialog: MatDialog
   ) { }
 
-  openDialog(title?: string, contentText?: string) {
+  openDialog(title?: string, contentText?: string, theme: string = 'my-light-theme') {
     this.dialogRef = this.dialog.open(SampleDialogComponent, {
-      data: { title: title, contentText: contentText }
+      data: { title: title, contentText: contentText, theme: theme }
     });
 
     return this.dialogRef;

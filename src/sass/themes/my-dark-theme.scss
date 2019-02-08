@@ -1,0 +1,11 @@
+
+// define 3 theme color
+// mat-palette accepts $palette-name, main, lighter and darker variants
+$my-theme-primary: mat-palette($mat-blue-grey, 700, A400, 900);
+$my-theme-accent: mat-palette($mat-brown);
+$my-theme-warn: mat-palette($mat-deep-orange);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$my-dark-theme: mat-dark-theme( $my-theme-primary, $my-theme-accent, $my-theme-warn );
+
+$my-color-error: #f15f55; // Sobrescreve a cor de ERRO !!

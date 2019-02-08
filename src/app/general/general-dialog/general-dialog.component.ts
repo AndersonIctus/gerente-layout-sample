@@ -6,7 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatPaginator, MatSort, MatTableDataSourc
   // tslint:disable-next-line:component-selector
   selector: 'acs-dialog',
   templateUrl: './general-dialog.component.html',
-  styleUrls: ['./general-dialog.component.css']
+  styleUrls: ['./general-dialog.component.scss']
 })
 export class GeneralDialogComponent<T> implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;

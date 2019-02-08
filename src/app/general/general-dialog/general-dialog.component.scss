@@ -1,3 +1,4 @@
+@import '../../../sass/styles.scss';
 
 .table-content {
   width: 99%;
@@ -10,7 +11,7 @@
 
 .element-row:hover {
   z-index: 99;
-  background: #f5f5f5;
+  // background: #f5f5f5;
   border-bottom: 2px solid #dadce0 !important;
   box-shadow: inset 1px 0 5px #dadce0,
               inset -1px 0 0 #dadce0,

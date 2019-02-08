@@ -22,6 +22,7 @@ import { ContabilistaModule } from './main/contabilista/contabilista.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { GeneralModule } from './general/general.module';
+import { TemasComponent } from './main/temas/temas.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { GeneralModule } from './general/general.module';
     MenuComponent,
 
     LoginComponent,
-    MainComponent
+    MainComponent,
+    TemasComponent
   ],
   imports: [
     BrowserModule,

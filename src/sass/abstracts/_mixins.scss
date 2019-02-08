@@ -1,0 +1,11 @@
+
+/* ***** MODIFICAR CORES DOS RIPLES E LABELS DOS INPUTS DOS FORMULÁRIOS ***** */
+@mixin label-and-riple-color($color) {
+  .mat-form-field-label {
+    color: $color; }
+
+  .mat-form-field-underline .mat-form-field-ripple {
+    opacity: 0.6;
+    transform: scaleX(1);
+    background: $color; }
+}

@@ -32,7 +32,7 @@ export class EditarContabilistasComponent extends CriarEditarContabilistasCompon
     super.ngOnInit();
 
     this.title = 'Editar Contabilista';
-    this.salvarEditarText = 'EDITAR';
+    this.salvarEditarText = 'Atualizar';
 
     const id = +this.route.snapshot.paramMap.get('idContabilista');
     this.contabilista = Contabilista.model.find( ele => ele.idContabilista === id );

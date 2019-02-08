@@ -7,7 +7,7 @@
 
   <div class="header-menu header-title m-0 p-0">
     <!-- ANCORAS PARA CADA PARTE DO FORMULÁRIO -->
-    <ul class="mb-1">
+    <ul class="mb-0">
         <li [class.is-active]="active_menu === 'geral'">    <a (click)="active_menu = 'geral'" class="ancor-scroll mat-button text-center" href='home/contabilistas/create#card_geral' >Geral</a></li>
         <li [class.is-active]="active_menu === 'endereco'"> <a (click)="active_menu = 'endereco'" class="ancor-scroll mat-button text-center" href="home/contabilistas/create#card_endereco">Endereço</a></li>
     </ul>
@@ -170,7 +170,8 @@
     <div class="text-right col-12 p-0">
       <label [hidden]="formModel.valid" style="color: red">* Preencha todos os campos obrigatórios</label>
     </div>
-    <button type="button" [routerLink]="routerLink" class="mr-auto" mat-raised-button mat-button color="accent">VOLTAR</button>
+
+    <button type="button" [routerLink]="routerLink" class="mr-auto" mat-raised-button mat-button color="accent">Voltar</button>
     <button type="submit" mat-raised-button mat-button color="primary">{{salvarEditarText}}</button>
   </div>
 </form>

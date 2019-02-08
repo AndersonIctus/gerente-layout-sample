@@ -1,32 +1,13 @@
 
 /* STATUS DEFAULT PARA OS INPUTS QUE PRECISAM INDICAR SE ESTÃO VÁLIDOS OU NÃO */
-.ng-invalid[required] .mat-form-field-label {
-  color: $my-color-error; }
+.ng-invalid[required] {
+  @include label-and-riple-color($my-color-error); }
 
-.ng-invalid[required] .mat-form-field-underline .mat-form-field-ripple {
-  opacity: 1;
-  transform: scaleX(1);
-  background: $my-color-error; }
+.ng-valid[required] {
+  @include label-and-riple-color($my-color-success); }
 
-.ng-valid[required] .mat-form-field-label {
-  color: #42A948; }
-
-.ng-valid[required] .mat-form-field-underline .mat-form-field-ripple {
-  opacity: 1;
-  transform: scaleX(1);
-  background: #42A948; }
-
-.ng-valid[nonrequired] .mat-form-field-label {
-  color: #c5c508; }
-
-.ng-valid[nonrequired] .mat-form-field-underline .mat-form-field-ripple {
-  opacity: 1;
-  transform: scaleX(1);
-  background: #c5c508; }
-
-/* .mat-form-field-disabled .mat-form-field-wrapper .mat-form-field-flex {
-  background: #dcdcdc;
-} */
+.ng-valid[nonrequired] {
+  @include label-and-riple-color($my-color-nonrequired); }
 
 /*******************************************************************************/
 

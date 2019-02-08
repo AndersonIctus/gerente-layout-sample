@@ -1,3 +1,5 @@
+@import '../../sass/styles.scss';
+
 .logo-panel {
   padding: 40px 0 40px 0;
 }
@@ -30,10 +32,10 @@ mat-form-field.mat-form-field {
   background-color: #232937;
 }
 
-.img-panel {  
+.img-panel {
   max-width: 100%;
   max-height: 100%;
-    
+
   background: transparent url('../../images/posto-de-gasolina.png') no-repeat;
   /* background: image('/src/images/posto-de-gasolina.jpg'); */
 }

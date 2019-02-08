@@ -1,4 +1,4 @@
-@import '../../../../sass/styles';
+@import '../../../../sass/styles.scss';
 
 /************** HEADER ***************/
 .header-menu ul {
@@ -15,27 +15,28 @@
   white-space: nowrap;
   padding: 5px 15px;
   text-align: center;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px !important;
+  }
+
+  &hover {
+    -moz-opacity: 0.50;
+    opacity: .70;
+  }
 }
 
-.header-menu ul li:hover {
-  -moz-opacity: 0.50;
-  opacity: .70;
-}
-
-.page-header,
-.header-menu {
-  background: mat-color($primary);
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
+// .header-menu ul li:hover {
+//   -moz-opacity: 0.50;
+//   opacity: .70;
+// }
 
 h1, h2 {
   margin-bottom: 0;
   font-family: monospace;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   color: white;
 }
 
@@ -56,14 +57,17 @@ h1, h2 {
 }
 
 .is-active {
-  border-bottom: 2px solid #a7b8c0 !important;
+  // border-bottom: 2px solid #a7b8c0 !important;
+  background: #777;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .mat-card-header {
   width: 100% !important;
   padding: 1.2em;
   border-radius: 8px 8px 0 0;
-  background-color: mat-color($primary, .7);
+  // background-color: mat-color($primary, .7);
   padding:5px !important;
 }
 
@@ -92,19 +96,6 @@ mat-card mat-card-content {
   font-weight: bold;
  }
 
-/************** FIELDS STYLE ***************/
-
-/* :host(.mat-form-field .ng-valid) >>> .mat-form-field-ripple {
-  background-color: green;
-} */
-
-/* :host-context() .mat-form-field-ripple {
-  background-color: green;
-// } */
-
-// .mat-focused .mat-form-field-label{ color: #ee6e73; }
-// .mat-focused .mat-form-field-underline .mat-form-field-ripple{ background: #ee6e73; }
-
 /************** FOOTER ***************/
 .tool-box {
   margin-top: 10px !important;
@@ -116,9 +107,9 @@ mat-card mat-card-content {
   position: absolute;
   bottom: 0px;
   z-index: 99999;
-  background-color: #fff;
   width: calc(100% - 4%);
-  border-top: 2px solid #999;
+  // background-color: #fff;
+  // border-top: 2px solid #999;
 }
 
 /************** MEDIA ALTERS ***************/

@@ -42,12 +42,11 @@
 
         <button type="submit" mat-raised-button color="accent" class="login-button col">
             <span *ngIf="!load_login"><b>Entrar</b></span>
-          <div class="load-spinner mt-2 mb-2 text-center" *ngIf="load_login">
-            <mat-spinner matSuffix diameter="25" color="primary" class="light-colors"></mat-spinner>
-          </div>
+            <div class="load-spinner mt-2 mb-2 text-center" *ngIf="load_login">
+              <mat-spinner matSuffix diameter="25" color="primary" class="light-colors"></mat-spinner>
+            </div>
         </button>
       </div>
     </form>
   </div>
-
 </div>

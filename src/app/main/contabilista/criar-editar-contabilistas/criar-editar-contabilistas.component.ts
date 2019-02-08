@@ -9,13 +9,13 @@ import { Municipio } from '../model/Municipio';
 export abstract class CriarEditarContabilistasComponent implements OnInit {
 
   public title = 'Criar Contabilista';
-  public salvarEditarText = 'SALVAR';
+  public salvarEditarText = 'Salvar';
   public active_menu = 'geral';
 
   @ViewChild('geralPosition') geralPosition: ElementRef;
   @ViewChild('enderecoPosition') enderecoPosition: ElementRef;
 
-  height = 592;
+  height = 594;
 
   routerLink = '/home/contabilistas';
 
@@ -33,7 +33,7 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     // console.log( JSON.stringify(this.main_container) );
-    this.height = event.target.innerHeight - 64 - 39 - 52;
+    this.height = event.target.innerHeight - 64 - 39 - 46;
   }
 
   ngOnInit(): void {
@@ -57,7 +57,7 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
           });
     });
 
-    this.height = window.innerHeight - 64 - 39 - 52;
+    this.height = window.innerHeight - 64 - 39 - 46;
   }
 
   abstract salvarAtualizar(formModelValue, isValid);
