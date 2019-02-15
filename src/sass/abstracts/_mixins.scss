@@ -8,4 +8,13 @@
     opacity: 0.6;
     transform: scaleX(1);
     background: $color; }
+
+  .mat-form-field-outline {
+    color: $color !important;
+  }
+
+  // .mat-form-field-outline .mat-form-field-outline-thick {
+  //     // opacity: 0.6;
+  //     color: $color;
+  // }
 }

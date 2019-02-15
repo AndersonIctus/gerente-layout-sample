@@ -12,6 +12,8 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
   public salvarEditarText = 'Salvar';
   public active_menu = 'geral';
 
+  inputAppearence = 'outline'; // appearance="outline"
+
   @ViewChild('geralPosition') geralPosition: ElementRef;
   @ViewChild('enderecoPosition') enderecoPosition: ElementRef;
 
@@ -32,7 +34,6 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    // console.log( JSON.stringify(this.main_container) );
     this.height = event.target.innerHeight - 64 - 39 - 46;
   }
 
@@ -95,10 +96,10 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
     const control = this.formModel.get(nameControl);
     if ( !control.errors ) { return ''; }
 
-    // if ( control.hasError('required') ) { return ''; }
+    if ( control.hasError('required') ) { return 'Campo Obrigatório'; }
 
 
-    return `erro detectado !! => '${nameControl}'`;
+    return `Outro erro detectado !! => '${nameControl}'`;
   }
 
   getUFByCodigo( codigo: string ): string {
@@ -136,12 +137,10 @@ export abstract class CriarEditarContabilistasComponent implements OnInit {
   }
 
   callCodMunicipioDialog() {
-    // this.toast.success('pressed IBGE icon !!');
-    const ret = this.dialog.openDialog('Teste Dialog', ['codigo', 'descricao'], Municipio.model);
+    const ret = this.dialog.openDialog('Escolha o Código do Município', ['codigo', 'descricao'], Municipio.model);
     ret
       .beforeClose()
       .subscribe( (result: Municipio) => {
-          // console.log( {result: result} );
           if (!result === false) {
             this.formModel.get('codMunicipio').setValue(result.codigo); // codMunicipioDescricao
             this.formModel.get('codMunicipioDescricao').setValue(result.descricao);

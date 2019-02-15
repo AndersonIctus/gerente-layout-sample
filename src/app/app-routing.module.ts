@@ -34,12 +34,12 @@ const routes: Routes = [
       { path: 'contabilistas/create', component: CriarContabilitasComponent },
       { path: 'contabilistas/:idContabilista', component: EditarContabilistasComponent },
 
-      // { path: 'contabilistas-dois', component: ListarContabilistasDoisComponent },
-      // { path: 'contabilistas-dois/create', component: CriarContabilitasDoisComponent },
-      // { path: 'contabilistas-dois/:idContabilista', component: EditarContabilistasDoisComponent },
+      { path: 'contabilistas-dois', component: ListarContabilistasDoisComponent },
+      { path: 'contabilistas-dois/create', component: CriarContabilitasDoisComponent },
+      { path: 'contabilistas-dois/:idContabilista', component: EditarContabilistasDoisComponent },
 
-      // { path: 'contabilistas-tres/create', component: CriarContabilitasTresComponent },
-      // { path: 'contabilistas-tres/:idContabilista', component: EditarContabilistasTresComponent },
+      { path: 'contabilistas-tres/create', component: CriarContabilitasTresComponent },
+      { path: 'contabilistas-tres/:idContabilista', component: EditarContabilistasTresComponent },
 
       { path: 'temas', component: TemasComponent },
     ]

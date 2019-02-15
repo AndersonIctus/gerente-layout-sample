@@ -6,13 +6,13 @@
   <!-- DIV DO LOGIN -->
   <div class="login-panel m-0 h-100 col-md-5 col-lg-4">
     <div class="logo-panel text-center">
-      <h1>login</h1>
+      <h1 class="login-header">login</h1>
     </div>
 
     <form [formGroup]="formLogin" (ngSubmit)="logar(formLogin.value, formLogin.valid)" >
       <div class="fields-panel">
         <!-- LOGIN -->
-        <mat-form-field class="form-group" appearance="outline" hideRequiredMarker="true">
+        <mat-form-field class="form-group block-field" appearance="outline" hideRequiredMarker="true">
           <mat-label>Usuário</mat-label>
           <mat-error *ngIf="formLogin.get('login').invalid">{{ getErrorMessage( formLogin.get('login') ) }}</mat-error>
 
@@ -20,7 +20,7 @@
         </mat-form-field>
 
         <!-- SENHA -->
-        <mat-form-field class="form-group" appearance="outline" hideRequiredMarker="true">
+        <mat-form-field class="form-group block-field" appearance="outline" hideRequiredMarker="true">
           <mat-label>Senha</mat-label>
           <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           <mat-error *ngIf="formLogin.get('senha').invalid">{{ getErrorMessage( formLogin.get('senha') ) }}</mat-error>
@@ -29,7 +29,7 @@
         </mat-form-field>
 
         <!-- EMPRESA -->
-        <mat-form-field class="form-group" appearance="outline" hideRequiredMarker="true">
+        <mat-form-field class="form-group block-field" appearance="outline" hideRequiredMarker="true">
           <mat-label>Empresa</mat-label>
           <mat-error *ngIf="formLogin.get('empresa').invalid">{{ getErrorMessage( formLogin.get('empresa') ) }}</mat-error>
 

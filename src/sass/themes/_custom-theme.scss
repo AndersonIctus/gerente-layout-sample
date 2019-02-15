@@ -16,12 +16,6 @@
   $foreground: map-get($theme, foreground) !global;
 }
 
-// @include defaultColors($my-light-theme);
-// @include angular-material-theme($my-light-theme);
-
-// @include angular-material-theme($my-dark-theme);
-// @include angular-material-theme($my-light-theme);
-
 // specify theme class eg: <body class="my-theme"> ... </body>
 // Outros temas especificados para serem usados !!
 .my-dark-theme {
@@ -50,8 +44,9 @@
   }
 
   .page-header,
-  .header-menu  {
-    background-color: mat-color($primary);
+  .header-menu {
+    $page-color : mat-color($primary);
+    background-color: lighten($page-color, 15%);
   }
 
   .mat-dialog-container {
@@ -59,8 +54,13 @@
   }
 
   .is-active {
-    // background: #677c86;
-    background: mat-color($accent, .4) !important;
+    background: mat-color($accent, .8) !important;
+  }
+
+  .header-menu ul li:not(.is-active) {
+    &:hover {
+      background: mat-color($accent, .4) !important;
+    }
   }
 
   .mat-form-field.mat-focused .mat-form-field-label {
@@ -93,7 +93,7 @@
   }
 
   .page-header,
-  .header-menu  {
+  .header-menu {
     background-color: mat-color($primary);
   }
 
@@ -103,8 +103,13 @@
   }
 
   .is-active {
-    // background: #677c86;
-    background: mat-color($accent, .4) !important;
+    background: mat-color($accent, .8) !important;
+  }
+
+  .header-menu ul li:not(.is-active) {
+    &:hover {
+      background: mat-color($accent, .4) !important;
+    }
   }
 }
 
@@ -125,8 +130,9 @@
   }
 
   .page-header,
-  .header-menu  {
-    background-color: mat-color($primary);
+  .header-menu {
+    $page-color : mat-color($primary);
+    background-color: lighten($page-color, 35%);
   }
 
   .tool-box {
@@ -135,7 +141,12 @@
   }
 
   .is-active {
-    // background: #677c86;
-    background: mat-color($accent, .4) !important;
+    background: mat-color($accent, .8) !important;
+  }
+
+  .header-menu ul li:not(.is-active) {
+    &:hover {
+      background: mat-color($accent, .4) !important;
+    }
   }
 }

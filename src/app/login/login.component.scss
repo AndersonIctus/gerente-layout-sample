@@ -4,7 +4,7 @@
   padding: 40px 0 40px 0;
 }
 
-h1 {
+.login-header {
   font-family: monospace;
   text-transform: uppercase;
 }
@@ -19,8 +19,8 @@ h1 {
   padding: 0 20px;
 }
 
-mat-form-field.mat-form-field {
-  display: block;
+.block-field {
+  display: block !important;
   font-size: 14px;
 }
 
