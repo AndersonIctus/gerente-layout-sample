@@ -15,8 +15,9 @@
         <mat-card-content class="my-table-card-content">
             <div class="table-responsive-sm">
               <div class="bodycontainer scrollable">
-                <table mat-table matSort #table [dataSource]="dataSource" aria-label="Elements"
-                       matSortActive="nome" matSortDirection="asc" class="table-scrollable table-content" >
+                <table mat-table #table [dataSource]="dataSource" aria-label="Elements"
+                       matSort matSortActive="nome" matSortDirection="asc"
+                       class="table-scrollable table-content" >
 
                   <!-- ID -->
                   <ng-container matColumnDef="idContabilista" >
@@ -82,7 +83,7 @@
                   <!-- EDIT ROW -->
                   <ng-container matColumnDef="edit" style="font-size: 16px;" stickyEnd>
                     <th mat-header-cell *matHeaderCellDef></th>
-                    <td tabindex="-1" class="p-0" mat-cell [routerLink]="[''+row.idContabilista]" *matCellDef="let row"> <mat-icon style="color: #c44;" >create</mat-icon></td>
+                    <td tabindex="-1" class="p-0" mat-cell *matCellDef="let row" [routerLink]="[''+row.idContabilista]"> <mat-icon style="color: #c44;" >create</mat-icon></td>
                   </ng-container>
 
                   <!--  -->
@@ -99,7 +100,6 @@
               [pageSizeOptions]="[5, 10, 15, 20, 40]">
             </mat-paginator>
         </mat-card-content>
-
     </mat-card>
   </div>
 

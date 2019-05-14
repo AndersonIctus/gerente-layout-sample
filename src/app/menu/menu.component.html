@@ -1,22 +1,7 @@
 <mat-sidenav-container class="sidenav-container" >
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
-      [ngClass]="{ hidden: !(isHandset$ | async) }"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)"
-  >
-    <mat-toolbar color="primary">Menu</mat-toolbar>
-    <mat-nav-list>
-        <a mat-list-item [routerLink]="['/home/contabilistas']">Contabilistas</a>
-    </mat-nav-list>
-  </mat-sidenav>
-
   <mat-sidenav-content class="m-0 p-0 row">
     <div class="mat-elevation-z8 app-nav">
       <mat-toolbar color="primary">
-        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
         <a routerLink="/" style="height: 50px">
           <img src="assets/img/acs-logo.png" class="imagem">
         </a>
@@ -34,5 +19,3 @@
 
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<!-- margin-top: -16px; -->

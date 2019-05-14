@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import "~bootstrap/dist/css/bootstrap.css"; */
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+/* @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 html,
 body {
@@ -28,7 +28,7 @@ body {
   outline: none !important;
 }
 
-/* STATUS DEFAULT PARA OS INPUTS QUE PRECISAM INDICAR SE ESTÃO VÁLIDOS OU NÃO */
+/* STATUS DEFAULT PARA OS INPUTS QUE PRECISAM INDICAR SE ESTÃO VÁLIDOS OU NÃO * /
 .ng-invalid[required] .mat-form-field-label {
   color: #f44336; }
 
@@ -51,7 +51,7 @@ body {
 .ng-valid[nonrequired] .mat-form-field-underline .mat-form-field-ripple {
   opacity: 1;
   transform: scaleX(1);
-  background: #c5c508; }
+  background: #c5c508; } */
 
 /* .mat-form-field-disabled .mat-form-field-wrapper .mat-form-field-flex {
   background: #dcdcdc;
@@ -59,7 +59,7 @@ body {
 
 /*******************************************************************************/
 
-@media (max-width: 991px) and (min-width: 768px){
+/* @media (max-width: 991px) and (min-width: 768px){
   .hidden-sm {
       display: none !important;
   }
@@ -70,3 +70,4 @@ body {
       display: none !important;
   }
 }
+*/
