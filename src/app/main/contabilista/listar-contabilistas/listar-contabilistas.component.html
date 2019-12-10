@@ -83,7 +83,9 @@
                   <!-- EDIT ROW -->
                   <ng-container matColumnDef="edit" style="font-size: 16px;" stickyEnd>
                     <th mat-header-cell *matHeaderCellDef></th>
-                    <td tabindex="-1" class="p-0" mat-cell *matCellDef="let row" [routerLink]="[''+row.idContabilista]"> <mat-icon style="color: #c44;" >create</mat-icon></td>
+                    <td tabindex="-1" class="p-0" mat-cell *matCellDef="let row" [routerLink]="[''+row.idContabilista]">
+                      <mat-icon style="color: #c44;" >create</mat-icon>
+                    </td>
                   </ng-container>
 
                   <!--  -->
